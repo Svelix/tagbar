@@ -125,6 +125,16 @@ function! s:InitTypes()
 
     let s:known_types = {}
 
+    " Actionscript {{{3
+    let type_actionscript = s:TypeInfo.New()
+    let type_actionscript.ctagstype = 'actionscript'
+    let type_actionscript.kinds     = [
+        \ {'short' : 'c', 'long' : 'class',    'fold' : 0, 'stl' : 1},
+        \ {'short' : 'f', 'long' : 'method',   'fold' : 0, 'stl' : 1},
+        \ {'short' : 'p', 'long' : 'property', 'fold' : 0, 'stl' : 1},
+        \ {'short' : 'v', 'long' : 'variable', 'fold' : 0, 'stl' : 1}
+    \ ]
+    let s:known_types.actionscript = type_actionscript
     " Ant {{{3
     let type_ant = s:TypeInfo.New()
     let type_ant.ctagstype = 'ant'
